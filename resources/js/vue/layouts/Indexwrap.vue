@@ -1,18 +1,24 @@
 <template>
     <div class="index_wrap">
-      <h1>Hello this is indexxxxxx</h1>
-        <Loading></Loading>
+        <Alert></Alert>
+        <Loading :active.sync="isLoading"></Loading>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+import Alert from '../components/Alert';
+
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
     components: {
+        Alert
     },
     computed: {
+        ...mapGetters([
+            'isLoading'
+        ]),
     },
     destroyed() {  },
 }

@@ -1,0 +1,28 @@
+.aside_wrap nav{
+    background: url('/img/aside_bg.jpg');
+    .nav-item{
+        height: 75px;
+        line-height: 75px;
+    }
+}
+
+.aside_title{
+    border: 1px solid #6c757d;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 4px 12px;
+}
+
+.aside_padding_left{
+    padding-left: 25%;
+}
+
+#sidebarMenu .nav-item{
+    &.active{
+        background: #8d7a69;
+        .nav-link{
+            color: #fff;
+        }
+    }
+}

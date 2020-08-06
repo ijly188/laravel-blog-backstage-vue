@@ -1,14 +1,17 @@
 @charset 'utf-8';
 
+@import "~bootstrap/scss/functions";
 // Abstracts
-@import 'abstracts/variables';
+@import 'abstracts/_variables';
+@import "~bootstrap/scss/bootstrap";
 
 // Base
-// @import 'base/base';
-// @import 'base/helpers';
-// @import 'base/reset';
-// @import 'base/typography';
-// @import 'base/utility';
+@import 'base/base';
+@import 'base/dashboard';
+@import 'base/helpers';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utility';
 
 // Components
 // @import 'components/breadcrumbs';
@@ -20,8 +23,10 @@
 // @import 'components/alerts';
 
 // Layout
-// @import 'layout/header';
-// @import 'layout/footer';
+@import 'layout/header';
+@import 'layout/aside';
+@import 'layout/content';
+@import 'layout/footer';
 
 // Pages
 // @import 'pages/landing-page';
