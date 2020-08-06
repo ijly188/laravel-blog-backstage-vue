@@ -5,12 +5,13 @@ import router from './routes';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 import zhTWvalidate from 'vee-validate/dist/locale/zh_TW';
 import VeeValidate from '../../public/helpers/vee-validate';
 
 import Vuex from 'vuex';
-import store from './vue/store';
+import store from './vue/store/index';
 
 Vue.use(VueAxios, axios);
 Vue.use(Vuex);
