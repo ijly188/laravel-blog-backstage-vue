@@ -1,6 +1,13 @@
 // require('./bootstrap');
 import Vue from 'vue';
 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap'
+
+// 讓瀏覽器的全域環境可以使用到 $
+import jQuery from 'jquery'
+window.$ = window.jQuery = jQuery
+
 import router from './routes';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
