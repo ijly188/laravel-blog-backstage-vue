@@ -17,3 +17,27 @@
         margin-top: 5px;
     }
 }
+
+.logout-button{
+    line-height: 31px;
+}
+
+// media query setting
+@media (max-width: 767px) {
+    .header--topcolumn_wrap .companylogoarea{
+        background:initial;
+    }
+    .indexbannerimg.aside_padding_left{
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+@media (min-width: 480px) {
+}
+@media (min-width: 768px) and (max-width: 979px) {
+}
+@media (min-width: 980px) {
+}
+@media (min-width: 1200px) {
+}

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?qruapg');
-  src:  url('fonts/icomoon.eot?qruapg#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?qruapg') format('truetype'),
-    url('fonts/icomoon.woff?qruapg') format('woff'),
-    url('fonts/icomoon.svg?qruapg#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?hatfmv');
+  src:  url('fonts/icomoon.eot?hatfmv#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?hatfmv') format('truetype'),
+    url('fonts/icomoon.woff?hatfmv') format('woff'),
+    url('fonts/icomoon.svg?hatfmv#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,7 +13,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -25,89 +25,216 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon--26:before {
+.icon-logo:before {
   content: "\e900";
 }
-.icon--25:before {
+.icon-photo4 .path1:before {
   content: "\e901";
+  color: rgb(255, 255, 255);
 }
-.icon--19:before {
+.icon-photo4 .path2:before {
   content: "\e902";
+  margin-left: -1em;
+  color: rgb(179, 175, 165);
 }
-.icon--18:before {
+.icon-photo4 .path3:before {
   content: "\e903";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
 }
-.icon--17:before {
+.icon-photo4 .path4:before {
   content: "\e904";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
 }
-.icon--16:before {
+.icon-photo4 .path5:before {
   content: "\e905";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
 }
-.icon--15 .path1:before {
+.icon-photo4 .path6:before {
   content: "\e906";
-  color: rgb(0, 0, 0);
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
 }
-.icon--15 .path2:before {
+.icon-photo4 .path7:before {
   content: "\e907";
   margin-left: -1em;
-  color: rgb(0, 0, 0);
+  color: rgb(245, 181, 183);
 }
-.icon--15 .path3:before {
+.icon-photo3 .path1:before {
   content: "\e908";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
-.icon--15 .path4:before {
+.icon-photo3 .path2:before {
   content: "\e909";
   margin-left: -1em;
+  color: rgb(241, 140, 71);
+}
+.icon-photo3 .path3:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo3 .path4:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo3 .path5:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo3 .path6:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo3 .path7:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo2 .path1:before {
+  content: "\e90f";
+  color: rgb(255, 255, 255);
+}
+.icon-photo2 .path2:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(137, 170, 201);
+}
+.icon-photo2 .path3:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo2 .path4:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo2 .path5:before {
+  content: "\e913";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo2 .path6:before {
+  content: "\e914";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo2 .path7:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo1 .path1:before {
+  content: "\e916";
+  color: rgb(255, 255, 255);
+}
+.icon-photo1 .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(142, 123, 85);
+}
+.icon-photo1 .path3:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo1 .path4:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo1 .path5:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo1 .path6:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-photo1 .path7:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(245, 181, 183);
+}
+.icon-failure:before {
+  content: "\e91d";
+}
+.icon-success:before {
+  content: "\e91e";
+}
+.icon-back:before {
+  content: "\e91f";
+}
+.icon-announcement:before {
+  content: "\e920";
+}
+.icon-eye .path1:before {
+  content: "\e921";
   color: rgb(0, 0, 0);
 }
-.icon--15 .path5:before {
-  content: "\e90a";
+.icon-eye .path2:before {
+  content: "\e922";
   margin-left: -1em;
   color: rgb(0, 0, 0);
 }
-.icon--15 .path6:before {
-  content: "\e90b";
+.icon-eye .path3:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-eye .path4:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-eye .path5:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-eye .path6:before {
+  content: "\e926";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon--14:before {
-  content: "\e90c";
+.icon-close:before {
+  content: "\e927";
 }
-.icon--13:before {
-  content: "\e90d";
+.icon-add:before {
+  content: "\e928";
 }
-.icon--12:before {
-  content: "\e90e";
+.icon-role-management-permissions:before {
+  content: "\e929";
 }
-.icon--11:before {
-  content: "\e90f";
+.icon-administer:before {
+  content: "\e92a";
 }
-.icon--10:before {
-  content: "\e910";
+.icon-delete_member:before {
+  content: "\e92b";
 }
-.icon--09:before {
-  content: "\e911";
+.icon-member_profile:before {
+  content: "\e92c";
 }
-.icon--08:before {
-  content: "\e912";
+.icon-edit_article:before {
+  content: "\e92d";
 }
-.icon--07:before {
-  content: "\e913";
+.icon-add_article:before {
+  content: "\e92e";
 }
-.icon--06:before {
-  content: "\e914";
+.icon-password:before {
+  content: "\e92f";
 }
-.icon--05:before {
-  content: "\e915";
+.icon-garbage:before {
+  content: "\e930";
 }
-.icon--04:before {
-  content: "\e916";
-}
-.icon--03:before {
-  content: "\e917";
-}
-.icon--02:before {
-  content: "\e918";
+.icon-article:before {
+  content: "\e931";
 }

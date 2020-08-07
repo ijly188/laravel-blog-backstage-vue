@@ -10,8 +10,6 @@
                 </main>
             </div>
         </div>
-        <router-link to="/login">login</router-link><br/>
-        index page<br/>
         <!-- <Footer></Footer> -->
     </div>
 </template>
