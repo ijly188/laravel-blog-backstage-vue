@@ -20,7 +20,7 @@
             </router-link>
           </li>
           <li class="nav-item aside_padding_left">
-            <router-link to="/system-user-list" class="nav-link p-0 font-weight-light">
+            <router-link to="/systemuser-list" class="nav-link p-0 font-weight-light">
               <span class="icon h4 icon-administer"></span>
               <span class="nav-item-text">管理員管理</span>
             </router-link>
