@@ -7,11 +7,18 @@ import Index from './vue/layouts/Index';
 
 // page
 import Content from './vue/pages/Content';
+
 // member-manage
 import MemberList from './vue/pages/member/MemberList';
 import MemberDetail from './vue/pages/member/MemberDetail';
 import createMemberDetail from './vue/pages/member/createMemberDetail';
 import updateMemberDetail from './vue/pages/member/updateMemberDetail';
+
+// systemuser-manage
+import SystemUserList from './vue/pages/systemuser/SystemUserList';
+import SystemUserDetail from './vue/pages/systemuser/SystemUserDetail';
+import createSystemUserDetail from './vue/pages/systemuser/createSystemUserDetail';
+import updateSystemUserDetail from './vue/pages/systemuser/updateSystemUserDetail';
 
 
 Vue.use(Router);
@@ -50,6 +57,22 @@ const routersetting = {
                 {
                   path:'/update-member-detail/:memberId',
                   component: updateMemberDetail,
+                },
+                {
+                  path:'/systemuser-list',
+                  component: SystemUserList,
+                },
+                {
+                  path:'/systemuser-detail/:systemUserId',
+                  component: SystemUserDetail,
+                },
+                {
+                  path:'/create-systemuser-detail',
+                  component: createSystemUserDetail,
+                },
+                {
+                  path:'/update-systemuser-detail/:systemUserId',
+                  component: updateSystemUserDetail,
                 },
               ],
             },
