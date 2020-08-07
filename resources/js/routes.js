@@ -20,6 +20,12 @@ import SystemUserDetail from './vue/pages/systemuser/SystemUserDetail';
 import createSystemUserDetail from './vue/pages/systemuser/createSystemUserDetail';
 import updateSystemUserDetail from './vue/pages/systemuser/updateSystemUserDetail';
 
+// article-manage
+import ArticleList from './vue/pages/article/ArticleList';
+import ArticleDetail from './vue/pages/article/ArticleDetail';
+import createArticleDetail from './vue/pages/article/createArticleDetail';
+import updateArticleDetail from './vue/pages/article/updateArticleDetail';
+
 
 Vue.use(Router);
 
@@ -42,6 +48,7 @@ const routersetting = {
                   path:'',
                   component: Content,
                 },
+                // member
                 {
                   path:'/member-list',
                   component: MemberList,
@@ -58,6 +65,7 @@ const routersetting = {
                   path:'/update-member-detail/:memberId',
                   component: updateMemberDetail,
                 },
+                // systemuser
                 {
                   path:'/systemuser-list',
                   component: SystemUserList,
@@ -73,6 +81,23 @@ const routersetting = {
                 {
                   path:'/update-systemuser-detail/:systemUserId',
                   component: updateSystemUserDetail,
+                },
+                // article
+                {
+                  path:'/article-list',
+                  component: ArticleList,
+                },
+                {
+                  path:'/article-detail/:articleId',
+                  component: ArticleDetail,
+                },
+                {
+                  path:'/create-article-detail',
+                  component: createArticleDetail,
+                },
+                {
+                  path:'/update-article-detail/:articleId',
+                  component: updateArticleDetail,
                 },
               ],
             },
