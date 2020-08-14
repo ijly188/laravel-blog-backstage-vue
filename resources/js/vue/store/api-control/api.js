@@ -6,37 +6,38 @@ const { token } = localStorage;
 const url = process.env.MIX_CLIENT_API_DOMAINNAME;
 
 // if no have token -> get token
-// const apiGetToken = axios.create({
-//   baseURL: url,
-//   headers: { Accept: 'application/json' },
-// });
-
-// if has token -> use the token to location data
-// const apiDeafult = axios.create({
-//   baseURL: url,
-//   headers: { Accept: 'application/json', Authorization: `Bearer ${token}`, 'content-type': 'application/x-www-form-urlencoded' },
-// });
-
-// post img
-// const apiPostImg = axios.create({
-//   // 解加密
-//   transformRequest: [function (data) {
-//     data = Qs.stringify(data);
-//     return data;
-//   }],
-//   baseURL: url,
-//   headers: {
-//     Accept: 'application/json',
-//     Authorization: `Bearer ${token}`,
-//   },
-// });
-
-
-// if no have token -> get token
-const Login = axios.create({
+const apiDefaultWithoutToken = axios.create({
   baseURL: url,
   headers: { Accept: 'application/json' },
 });
 
+const apiDefaultWithToken = axios.create({
+  baseURL: url,
+  headers: { 
+    Accept: 'application/json',
+    Authorization: `Bearer ${token}`,
+    'content-type': 'application/x-www-form-urlencoded'
+  },
+});
+
+
 // login Api
-export const apiLogin = (data, method) => Login[method]('/api/login', data);
+export const apiLogin = (data, method) => apiDefaultWithoutToken[method]('/api/backstage-login', data);
+
+// logout Api
+export const apiLogout = (method) => apiDefaultWithToken[method]('/api/backstage-logout');
+
+// refresh token;
+export const refreshToken = (context, response) => {
+  if (response.headers.authorization) {
+    const newBearerToken = response.headers.authorization;
+    const newToken = newBearerToken.substring(6);
+    context.commit('USERREFRESHTOKEN', newToken);
+  }
+};
+
+// get aside Api
+export const apiGetAside = () => apiDefaultWithToken['get']('/api/get-aside-menu');
+
+// get articlelist Api
+export const apiGetArticlelist = () => apiDefaultWithToken['get']('/api/articles-list')

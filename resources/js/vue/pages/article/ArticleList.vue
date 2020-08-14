@@ -17,39 +17,27 @@
         <div class="table_wrap">
           <div class="row">
             <div class="tableheader_wrap">
-              <div class="">頭貼</div>
-              <div class="">姓名</div>
-              <div class="d-none d-sm-flex">Email</div>
+              <div class="">作者</div>
+              <div class="d-none d-sm-flex">文章標題</div>
+              <div class="">文章內容</div>
               <div class="">動作</div>
             </div>
           </div>
           <div class="row">
-            <router-link to="/article-detail/1" class="content_flex_wrap">
-              <div class="tablecontent_row">
-                <div class="icon_column">
-                  <span class="icon_wrap">
-                    <span class="icon-photo1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span></span>
-                  </span>
+            <router-link
+              v-for="(item, i) in articleList.article_list" :key="i"
+              :to="'/article-detail/' + item.id" class="content_flex_wrap">
+              <div class="tablecontent_row py-3">
+                <div class="">陳庭瑜 {{ item.member_id }}</div>
+                <div class="d-none d-sm-flex">{{ item.title }}</div>
+                <div class="articlelist_content">{{ item.content }}
                 </div>
-                <div class="">陳庭瑜</div>
-                <div class="d-none d-sm-flex">test@test.test</div>
                 <div class="">
-                  <span class="btn content-button">修改</span>
-                  <span class="ml-3 h4 icon icon-garbage"></span>
-                </div>
-              </div>
-            </router-link>
-            <router-link to="/article-detail/1" class="content_flex_wrap">
-              <div class="tablecontent_row">
-                <div class="icon_column">
-                  <span class="icon_wrap">
-                    <span class="icon-photo1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span></span>
-                  </span>
-                </div>
-                <div class="">陳庭瑜</div>
-                <div class="d-none d-sm-flex">test@test.test</div>
-                <div class="">
-                  <span class="btn content-button">修改</span>
+                  <router-link
+                    :to="'/update-article-detail/' + item.id"
+                  >
+                    <span class="btn content-button">修改</span>
+                  </router-link>
                   <span class="ml-3 h4 icon icon-garbage"></span>
                 </div>
               </div>
@@ -57,13 +45,25 @@
           </div>
         </div>
         <div class="pagination_wrap row pt-3">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          <nav aria-label="Page navigation example" v-if="articleList">
+            <ul class="pagination" v-if="articleList.pagination">
+              <li
+                class="page-item"
+                v-if="articleList.pagination.has_pre">
+                <span @click="getArticleList(articleList.pagination.has_pre)" class="page-link">上一頁</span>
+              </li>
+              <li
+                v-for="(item, i) in  articleList.pagination.total_page"
+                :key="i"
+                :class="{'active': ( articleList.pagination.current_page == ( i + 1 ) ) }"
+                class="page-item">
+                <span @click="getArticleList(( i + 1 ))" class="page-link">{{ (i + 1) }}</span>
+              </li>
+              <li
+                class="page-item"
+                v-if="articleList.pagination.has_next">
+                <span @click="getArticleList(articleList.pagination.has_next)" class="page-link">下一頁</span>
+              </li>
             </ul>
           </nav>
         </div>
@@ -76,17 +76,33 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import router from '../../../routes';
 
 export default {
   name: "ArticleList",
   data() {
-    return {};
+    return {
+      page: 1,
+    };
   },
-  methods: {},
+  methods: {
+    getArticleList(page){
+      this.$store.dispatch("getArticleList", page);
+    },
+  },
   computed: {
-    ...mapGetters([])
+    ...mapGetters([
+      'articleList'
+    ])
   },
-  watch: {},
-  created() {}
+  watch: {
+    articleList(){}
+  },
+  created() {
+    this.page = this.$route.query;
+    Object.keys(this.page).length == 0 ? this.page = 1 : this.page = this.$route.query.page;
+
+    this.getArticleList(this.page);
+  }
 };
 </script>
