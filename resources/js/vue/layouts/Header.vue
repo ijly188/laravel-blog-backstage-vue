@@ -10,8 +10,8 @@
         </button>
         
         <ul class="navbar-nav px-3 d-none d-md-inline">
-            <span class="text-light mr-2 d-inline-block username_wrap">hi, 陳庭瑜</span>
-            <router-link to="/logout" class="btn btn-light logout-button p-0">登出</router-link>
+            <span class="text-light mr-2 d-inline-block username_wrap">hi, {{ username }}</span>
+            <span @click.prevent="postLogout" class="btn btn-light logout-button p-0">登出</span>
         </ul>
     </nav>
 </template>
@@ -30,18 +30,19 @@ export default {
         }
     },
     methods: {
-        
+        postLogout(){
+            this.$store.dispatch("postLogout");
+        },
     },
     computed: {
         ...mapGetters([
-            
+            'username'
         ])
     },
     watch: {
         
     },
     created () {
-        
     },
 }
 </script>

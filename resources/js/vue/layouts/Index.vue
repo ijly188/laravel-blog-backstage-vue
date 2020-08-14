@@ -14,6 +14,8 @@
     </div>
 </template>
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 import Header from './Header';
 import Aside from './Aside';
 import Footer from './Footer';
@@ -29,7 +31,17 @@ export default {
     },
     computed: {
     },
+    methods: {
+        checkToken() {
+            this.$store.dispatch("checkTokenEmpty");
+        },
+        async getAside() {
+            await this.$store.dispatch("getAsideMenu");
+        }
+    },
     created() {
+        this.checkToken();
+        this.getAside();
         // let token = localStorage.getItem('token');
         // console.log(token);
     },

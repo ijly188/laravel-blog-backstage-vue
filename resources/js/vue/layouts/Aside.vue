@@ -5,7 +5,7 @@
         <h5 class="sidebar-heading d-flex mt-4 mb-1 aside_padding_left">
           <span class="h6 aside_title">後台內容</span>
         </h5>
-        <ul class="nav flex-column">
+        <!-- <ul class="nav flex-column">
           <li class="nav-item aside_padding_left"
             v-bind:class="{ active: ( $route.fullPath === '/member-list') }">
             <router-link to="/member-list" class="nav-link p-0 font-weight-light">
@@ -31,7 +31,7 @@
               <span class="nav-item-text">角色權限設定</span>
             </router-link>
           </li>
-        </ul>
+        </ul> -->
         <!-- <h5 class="sidebar-heading d-flex mt-4 mb-1 aside_padding_left">
           <span class="h6 aside_title">管理員帳戶</span>
         </h5>
@@ -49,6 +49,16 @@
             </a>
           </li>
         </ul> -->
+        <ul class="nav flex-column" v-if="aside">
+          <li class="nav-item aside_padding_left"
+            v-for="(item, i) in aside" :key="i"
+            v-bind:class="{ 'active': ( $route.fullPath == item.route) }">
+            <router-link :to="item.route" class="nav-link p-0 font-weight-light">
+              <span class="icon h4" :class="item.icon"></span>
+              <span class="nav-item-text">{{ item.name }}</span>
+            </router-link>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>
@@ -67,9 +77,17 @@ export default {
   },
   methods: {},
   computed: {
-    ...mapGetters([])
+    ...mapGetters([
+      'aside'
+    ])
   },
-  watch: {},
-  created() {}
+  watch: {
+    aside(){
+      // console.log(this.aside);
+    }
+  },
+  mounted() {
+    // console.log(this.asdie);
+  }
 };
 </script>
