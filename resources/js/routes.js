@@ -8,6 +8,8 @@ import Index from './vue/layouts/Index';
 // page
 import Content from './vue/pages/Content';
 
+import Login from './vue/pages/member/Login';
+
 // member-manage
 import MemberList from './vue/pages/member/MemberList';
 import MemberDetail from './vue/pages/member/MemberDetail';
@@ -28,6 +30,11 @@ import updateArticleDetail from './vue/pages/article/updateArticleDetail';
 
 
 Vue.use(Router);
+
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+};
 
 const routersetting = {
   mode: 'history',
@@ -100,6 +107,10 @@ const routersetting = {
                   component: updateArticleDetail,
                 },
               ],
+            },
+            {
+              path:'login',
+              component: Login,
             },
           ],
         }

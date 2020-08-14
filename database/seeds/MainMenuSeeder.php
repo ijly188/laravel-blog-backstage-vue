@@ -19,11 +19,11 @@ class MainMenuSeeder extends Seeder
         ];
 
         $icon = [
-            'icon-member', 'icon-article', 'icon-systemuser'
+            'icon-member_profile', 'icon-article', 'icon-administer'
         ];
 
         $route = [
-            '/members-manage', '/articles-manage', 'systemuser-manage'
+            '/member-list', '/article-list', '/systemuser-list'
         ];
         
         for ($i = 0; $i < sizeof($name); $i++) {
